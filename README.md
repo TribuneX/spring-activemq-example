@@ -95,8 +95,8 @@ public JmsListenerContainerFactory myFactory(ConnectionFactory connectionFactory
     DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
 
     factory.setSessionAcknowledgeMode(Session.AUTO_ACKNOWLEDGE);
-    factory.setSessionTransacted(Boolean.TRUE);
     configurer.configure(factory, connectionFactory);
+    factory.setSessionTransacted(Boolean.TRUE);
 
     return factory;
 }
